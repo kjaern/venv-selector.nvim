@@ -79,7 +79,8 @@ function M.set_venv_and_system_paths(venv_row)
     new_bin_path = venv_path .. sys.path_sep .. sys.python_parent_path
     venv_python = new_bin_path .. sys.path_sep .. sys.python_name
   end
-
+  dbg 'python env path'
+  dbg(venv_python)
   -- Make sure our python exists on disk before activating it, in case paths are wrong
   if vim.fn.executable(venv_python) == 0 then
     utils.notify("The python path '" .. venv_python .. "' doesnt exist.")
