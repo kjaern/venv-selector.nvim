@@ -10,7 +10,7 @@ local previous_dir = nil
 function M.save_selected_python(python_path)
     local path = require("venv-selector.path")
     M.current_python_path = python_path
-    M.current_venv_path = path.get_base(path.get_base(python_path))
+    M.current_venv_path = path.get_base(python_path)
     log.debug('Setting require("venv-selector").python() to \'' .. M.current_python_path .. "'")
     log.debug('Setting require("venv-selector").venv() to \'' .. M.current_venv_path .. "'")
 end
