@@ -87,7 +87,7 @@ end
 
 function M.set_env(python_path, env_variable_name)
     if config.user_settings.options.set_environment_variables == true then
-        local env_path = path.get_base(path.get_base(python_path))
+        local env_path = path.get_base(python_path)
         if env_path ~= nil then
             vim.fn.setenv(env_variable_name, env_path)
             log.debug("$" .. env_variable_name .. " set to " .. env_path)
